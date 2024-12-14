@@ -2,9 +2,13 @@ from typing import Optional, List
 import psycopg
 from datetime import datetime
 import os
+from dotenv import load_dotenv
+
+# Load environment variables
+load_dotenv()
 
 # Database connection string
-DATABASE_URL = "postgres://user_ymnqzvpkpf:YG0BV87tR7ElvXRLEjZP@devinapps-backend-prod.cluster-clussqewa0rh.us-west-2.rds.amazonaws.com/db_nlbisuxwgi?sslmode=require"
+DATABASE_URL = os.getenv("DATABASE_URL")
 
 def get_db_connection():
     return psycopg.connect(DATABASE_URL)
