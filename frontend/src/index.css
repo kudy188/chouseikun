@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #f0fff4;
+  background-image: url('/mantis-bg.svg');
+  background-repeat: repeat;
+  background-size: 150px;
+  background-position: center;
+  min-height: 100vh;
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", sans-serif;
+  padding: 1rem;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.95);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+@media (max-width: 640px) {
+  body {
+    padding: 0.5rem;
+  }
+  .container {
+    padding: 1rem;
+    margin: 1rem auto;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-bounce {
+  animation: bounce 2s infinite ease-in-out;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 0 2px #98FB98;
+}
+
+.hover\:scale-105:hover {
+  transition: transform 0.2s ease-in-out;
+}
+
+.hover\:scale-\[1\.02\]:hover {
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Add mantis background pattern */
+.mantis-pattern {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjQwMCIgdmlld0JveD0iMCAwIDQwMCA0MDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CiAgPHBhdGggZmlsbD0iIzAwODAwMCIgZmlsbC1vcGFjaXR5PSIwLjEiIGQ9Ik0yMDAgNTBjLTgyLjg0MyAwLTE1MCA2Ny4xNTctMTUwIDE1MHM2Ny4xNTcgMTUwIDE1MCAxNTAgMTUwLTY3LjE1NyAxNTAtMTUwUzI4Mi44NDMgNTAgMjAwIDUwem0wIDI3NWMtNjguOTIgMC0xMjUtNTYuMDc1LTEyNS0xMjVTMTMxLjA4IDc1IDIwMCA3NXMxMjUgNTYuMDc1IDEyNSAxMjUtNTYuMDggMTI1LTEyNSAxMjV6Ii8+CiAgPHBhdGggZmlsbD0iIzAwODAwMCIgZmlsbC1vcGFjaXR5PSIwLjEiIGQ9Ik0yMDAgMTAwYy01NS4yMjkgMC0xMDAgNDQuNzcxLTEwMCAxMDBzNDQuNzcxIDEwMCAxMDAgMTAwIDEwMC00NC43NzEgMTAwLTEwMFMyNTUuMjI5IDEwMCAyMDAgMTAwem0wIDE3NWMtNDEuNDIxIDAtNzUtMzMuNTc5LTc1LTc1czMzLjU3OS03NSA3NS03NSA3NSAzMy41NzkgNzUgNzUtMzMuNTc5IDc1LTc1IDc1eiIvPgo8L3N2Zz4K');
+  background-repeat: repeat;
+  background-size: 400px;
+  background-position: center;
+  opacity: 0.1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Add background container */
+.bg-container {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98));
+}
+
